@@ -20,7 +20,7 @@ const LAUNCH_QUERY = gql`
 `
 
 const Launch = ({ match }) => {
-  const flight_number = parseInt(match.params.flight_number)
+  const flight_number = parseInt(match.params.flight_number, 10)
   const { loading, error, data } = useQuery(LAUNCH_QUERY, {
     variables: {
       flight_number: flight_number,
